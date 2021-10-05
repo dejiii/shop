@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;700&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Archivo", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.labelcheckbox {
+  color: #1d1d1d;
+}
+
+.checkbox:after {
+  border: 2px solid #000 !important;
+}
