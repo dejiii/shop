@@ -18,7 +18,7 @@ function Range() {
     <div>
       <LargeText>Price Range</LargeText>
       {ranges.map((data) => (
-        <div className="mt-4" id={data.id}>
+        <div className="mt-4 range-texts" id={data.id}>
           <Checkbox
             label={data.label}
             value={data.values}

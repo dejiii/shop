@@ -20,6 +20,10 @@ export const BlackButton = styled.button`
   padding: 8px 30px;
   border: 0;
   text-transform: capitalize;
+  font-size: 23px;
+  line-height: 25px;
+  font-weight: 500;
+  letter-spacing: 7%;
 
   width: ${(props) => (props.full ? "100%" : "")};
   position: ${(props) => (props.full ? "absolute" : "")};
@@ -49,8 +53,34 @@ export const ProductCard = styled.div`
   }
 `;
 
-export const ProductDeets = styled.div`
+export const ProductDetails = styled.div`
   position: relative;
+  cursor: pointer;
+
+  button {
+    display: none;
+    animation-name: example;
+    animation-duration: 3s;
+  }
+
+  :hover button {
+    display: block;
+  }
+
+  @media screen and (max-width: 500px) {
+    display: block;
+  }
+
+  @keyframes example {
+    from {
+      display: none;
+      margin-top: 30px;
+    }
+    to {
+      display: block;
+      margin-top: 0;
+    }
+  }
 `;
 
 export const ProductFlag = styled.span`
@@ -58,12 +88,16 @@ export const ProductFlag = styled.span`
   background: #fff;
   color: #000;
   padding: 5px;
+  font-size: 20px;
+  line-height: 22px;
 `;
 
 export const ProductCategory = styled.div`
   font-weight: 700;
   color: #656565;
   margin: 20px 0 0;
+  font-size: 22px;
+  line-height: 24px;
 `;
 
 export const ProductName = styled.div`
@@ -77,9 +111,9 @@ export const ProductPrice = styled.div`
   font-weight: 400;
   font-size: 29px;
   line-height: 32px;
-  margin: 10px 0 30px;
+  margin: 10px 0 60px;
 
   ::before {
-    content: "$";
+    content: "$ ";
   }
 `;
