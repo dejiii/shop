@@ -2,7 +2,6 @@ import { Container } from "react-bootstrap";
 import { useFirestoreQueryData } from "@react-query-firebase/firestore";
 import { query, collection } from "firebase/firestore";
 
-// import Container from "../../components/Container";
 import Banner from "../../components/Banner";
 import NavSection from "../../components/NavBar";
 import ProductsSection from "../../components/ProductsSection";
@@ -27,7 +26,6 @@ function Home() {
   }
 
   const featuredProduct = products.find((product) => product.featured === true);
-  console.log("featuredProduct", featuredProduct);
 
   return (
     <>

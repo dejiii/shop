@@ -1,5 +1,6 @@
 import React from "react";
 import { Row, Col, Container } from "react-bootstrap";
+
 import { FlexBetween, BlackButton, LargeText } from "../../utils/styles";
 import {
   BannerWrapper,
@@ -11,6 +12,7 @@ import {
   ProductSuggestions,
   DescText,
 } from "./styles";
+
 import P1 from "../../img/p1.png";
 import P2 from "../../img/p3.png";
 import P3 from "../../img/p3.png";
@@ -20,7 +22,7 @@ function Banner({ product }) {
     name,
     category,
     description,
-    image: { src, alt },
+    image: { src },
     size,
     height,
     width,

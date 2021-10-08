@@ -4,8 +4,6 @@ import Range from "../range";
 import Sort from "../sort";
 import Category from "../category";
 import { BigText, FlexBetween, Products } from "../../utils/styles";
-import SingleProduct from "../singleProduct";
-import Pages from "../pagination";
 import ProductList from "../productsList";
 import Pagination from "../pagination";
 
@@ -16,7 +14,7 @@ const ProductSection = ({ products }) => {
 
   const indexOfLastProduct = currentPage * productPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productPerPage;
-  const currentProducts = products.slice(
+  const currentProducts = totalProducts.slice(
     indexOfFirstProduct,
     indexOfLastProduct
   );
@@ -38,16 +36,20 @@ const ProductSection = ({ products }) => {
     <Container className="mt-5">
       <FlexBetween>
         <BigText>Photography / Premium Photos</BigText>
-        <Sort />
+        <Sort setTotalProducts={setTotalProducts} />
       </FlexBetween>
       <Row className="mt-5">
         <Col md="3">
-          <Category />
+          <Category
+            setTotalProducts={setTotalProducts}
+            products={totalProducts}
+          />
           <hr />
-          <Range />
+          <Range setTotalProducts={setTotalProducts} />
         </Col>
         <Col md="9">
           <ProductList currentProducts={currentProducts} />
+          {/* {totalProducts.lenght > 6 ? ( */}
           <div className="mx-auto">
             <Pagination
               productPerPage={6}
@@ -57,6 +59,7 @@ const ProductSection = ({ products }) => {
               handleJumpTo={handleJumpTo}
             />
           </div>
+          {/* ) : null} */}
         </Col>
       </Row>
     </Container>

@@ -1,4 +1,3 @@
-// import Im1 from "../../img/image1.png";
 import {
   BlackButton,
   ProductCard,
@@ -20,7 +19,7 @@ function SingleProduct({ product }) {
   return (
     <ProductCard>
       <ProductImage props={{ alt, src }}>
-        {bestseller ? <ProductFlag>bestseller</ProductFlag> : null}
+        {bestseller ? <ProductFlag>bestseller</ProductFlag> : null}{" "}
         <img src={src} alt={alt} className="w-100 h-100" />
         <BlackButton full>ADD TO CART</BlackButton>
       </ProductImage>
