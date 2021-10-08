@@ -9,7 +9,9 @@ export const FeaturedProduct = styled.div`
   background-color: #ddd;
   width: 100%;
   position: relative;
-  background-image: url(${(props) => props.background}) no-repeat center;
+  background-image: url(${(props) => props.background});
+  background-position: center;
+  background-size: cover;
   margin-top: 20px;
 `;
 
@@ -46,7 +48,7 @@ export const ProductDescription = styled.p`
   margin-top: 10px;
 
   @media screen and (max-width: 500px) {
-   width: 100%;
+    width: 100%;
   }
 `;
 

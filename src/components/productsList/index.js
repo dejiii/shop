@@ -1,15 +1,12 @@
 import SingleProduct from "../singleProduct";
 import { Products } from "../../utils/styles";
 
-function ProductList() {
+function ProductList({ currentProducts }) {
   return (
     <Products>
-      <SingleProduct />
-      <SingleProduct />
-      <SingleProduct />
-      <SingleProduct />
-      <SingleProduct />
-      <SingleProduct />
+      {currentProducts.map((product, index) => {
+        return <SingleProduct key={index} product={product} />;
+      })}
     </Products>
   );
 }

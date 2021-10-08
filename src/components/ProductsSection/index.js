@@ -6,6 +6,8 @@ import Category from "../category";
 import { BigText, FlexBetween, Products } from "../../utils/styles";
 import SingleProduct from "../singleProduct";
 import Pages from "../pagination";
+import ProductList from "../productsList";
+import Pagination from "../pagination";
 
 const ProductSection = ({ products }) => {
   const [totalProducts, setTotalProducts] = useState(products);
@@ -13,8 +15,24 @@ const ProductSection = ({ products }) => {
   const [productPerPage, setProductPerPage] = useState([6]);
 
   const indexOfLastProduct = currentPage * productPerPage;
-  const indexOfFirstProduct = currentPage - postPerPage;
-  const currentProducts = posts.slice(indexOfFirstPost, indexOfLastPost);
+  const indexOfFirstProduct = indexOfLastProduct - productPerPage;
+  const currentProducts = products.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
+
+  const handleNext = () => {
+    //
+    setCurrentPage((prevState) => prevState + 1);
+  };
+
+  const handlePrev = () => {
+    setCurrentPage((prevState) => prevState - 1);
+  };
+
+  const handleJumpTo = (number) => {
+    setCurrentPage(number);
+  };
 
   return (
     <Container className="mt-5">
@@ -29,13 +47,15 @@ const ProductSection = ({ products }) => {
           <Range />
         </Col>
         <Col md="9">
-          <Products>
-            {products.map((product) => {
-              return <SingleProduct product={product} />;
-            })}
-          </Products>
+          <ProductList currentProducts={currentProducts} />
           <div className="mx-auto">
-            <Pages />
+            <Pagination
+              productPerPage={6}
+              totalProducts={21}
+              handleNext={handleNext}
+              handlePrev={handlePrev}
+              handleJumpTo={handleJumpTo}
+            />
           </div>
         </Col>
       </Row>

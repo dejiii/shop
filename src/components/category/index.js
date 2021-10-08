@@ -2,7 +2,7 @@ import { Checkbox } from "custom-input-aslam";
 import "custom-input-aslam/build/index.css";
 import { LargeText } from "../../utils/styles";
 
-function Category() {
+const Category = () => {
   const handleCheck = (e) => {
     console.log(e.target.checked);
   };
@@ -20,18 +20,21 @@ function Category() {
   return (
     <div>
       <LargeText>Category</LargeText>
-      {categories.map((data) => (
-        <div className="mt-4" id={data.id}>
-          <Checkbox
-            label={data.label}
-            value={data.values}
-            color="black"
-            onChange={(e) => handleCheck(e)}
-          />
-        </div>
-      ))}
+      {categories.map((data) => {
+        const { id, label, value } = data;
+        return (
+          <div key={id} className="mt-4">
+            <Checkbox
+              label={label}
+              value={value}
+              color="black"
+              onChange={(e) => handleCheck(e)}
+            />
+          </div>
+        );
+      })}
     </div>
   );
-}
+};
 
 export default Category;

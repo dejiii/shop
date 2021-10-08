@@ -1,15 +1,14 @@
 import Logo from "../../img/logo.png";
-// import { Cart } from "../../icons";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 import { NavStyles } from "./styles";
 
 function NavBar() {
   return (
-    <NavStyles>
+    <NavStyles className="container">
       <img src={Logo} alt="" />
       <span>
-        Cart
-        {/* <Cart /> */}
+        <AiOutlineShoppingCart style={{ fontSize: "30" }} />
       </span>
     </NavStyles>
   );

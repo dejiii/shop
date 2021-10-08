@@ -26,13 +26,16 @@ function Home() {
     return <div>{error}</div>;
   }
 
+  const featuredProduct = products.find((product) => product.featured === true);
+  console.log("featuredProduct", featuredProduct);
+
   return (
     <>
       <div>
         <NavSection />
       </div>
       <Container>
-        <Banner />
+        <Banner product={featuredProduct} />
         <ProductsSection products={products} />
       </Container>
     </>

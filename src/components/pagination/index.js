@@ -1,6 +1,11 @@
-// import Pagination from "react-bootstrap/Pagination";
-
-const Pages = ({ productPerPage, totalProducts }) => {
+import { GoChevronLeft, GoChevronRight } from "react-icons/go";
+const Pagination = ({
+  productPerPage,
+  totalProducts,
+  handlePrev,
+  handleNext,
+  handleJumpTo,
+}) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalProducts / productPerPage); i++) {
@@ -9,17 +14,23 @@ const Pages = ({ productPerPage, totalProducts }) => {
 
   return (
     <nav className="pagination">
-      <ul>
-        {pageNumbers.map((number) => (
-          <li key={number} className="page-item">
-            <a href="!#" className="age-link">
+      <ul className="pagination-list">
+        <GoChevronLeft className="pagination-arrows" />
+        {pageNumbers.map((number, index) => (
+          <li
+            onClick={() => handleJumpTo(number)}
+            key={index}
+            className="active"
+          >
+            <span href="#" className="page-numbers">
               {number}
-            </a>
+            </span>
           </li>
         ))}
+        <GoChevronRight className="pagination-arrows" />
       </ul>
     </nav>
   );
 };
 
-export default Pages;
+export default Pagination;

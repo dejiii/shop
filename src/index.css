@@ -26,3 +26,45 @@ body {
 select {
   border: none !important;
 }
+
+.pagination {
+  padding-bottom: 40px;
+}
+
+.pagination-list {
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+  color: #b4b4b4;
+}
+
+.pagination-list:hover {
+  cursor: pointer;
+}
+
+.pagination-list li {
+  list-style-type: none;
+  font-size: 27px;
+  line-height: 27px;
+  padding: 10px;
+}
+
+.pagination-list li a {
+  color: #b4b4b4;
+}
+
+.pagination-list li a .active {
+  color: #000;
+}
+
+.pagination-list li a:hover {
+  text-decoration: none;
+}
+
+.pagination-arrows {
+  font-size: 24px;
+  color: #000;
+  margin: 10px;
+  font-weight: bold;
+  /* margin-top: 12px; */
+}

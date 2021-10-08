@@ -17,16 +17,19 @@ function Range() {
   return (
     <div>
       <LargeText>Price Range</LargeText>
-      {ranges.map((data) => (
-        <div className="mt-4 range-texts" id={data.id}>
-          <Checkbox
-            label={data.label}
-            value={data.values}
-            color="black"
-            onChange={(e) => handleCheck(e)}
-          />
-        </div>
-      ))}
+      {ranges.map((data) => {
+        const { value, label, id } = data;
+        return (
+          <div key={id} className="mt-4 range-texts">
+            <Checkbox
+              label={label}
+              value={value}
+              color="black"
+              onChange={(e) => handleCheck(e)}
+            />
+          </div>
+        );
+      })}
     </div>
   );
 }

@@ -48,14 +48,20 @@ export const Products = styled.div`
 export const ProductCard = styled.div`
   flex-basis: 30%;
 
+  @media screen and (max-width: 800px) {
+    flex-basis: 45% !important;
+  }
+
   @media screen and (max-width: 500px) {
     flex-basis: 100%;
   }
 `;
 
-export const ProductDetails = styled.div`
+export const ProductImage = styled.div`
+  background-color: #ddd;
   position: relative;
   cursor: pointer;
+  height: 400px;
 
   button {
     display: none;
@@ -65,6 +71,7 @@ export const ProductDetails = styled.div`
 
   :hover button {
     display: block;
+    animation: 3s ease-in example;
   }
 
   @media screen and (max-width: 500px) {
@@ -98,6 +105,7 @@ export const ProductCategory = styled.div`
   margin: 20px 0 0;
   font-size: 22px;
   line-height: 24px;
+  text-transform: capitalize;
 `;
 
 export const ProductName = styled.div`

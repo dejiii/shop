@@ -1,10 +1,10 @@
-import Im1 from "../../img/image1.png";
+// import Im1 from "../../img/image1.png";
 import {
   BlackButton,
   ProductCard,
   ProductCategory,
   ProductFlag,
-  ProductDetails,
+  ProductImage,
   ProductName,
   ProductPrice,
 } from "../../utils/styles";
@@ -15,15 +15,15 @@ function SingleProduct({ product }) {
     category,
     name,
     price,
-    // image: { alt, src },
+    image: { alt, src },
   } = product;
   return (
     <ProductCard>
-      <ProductDetails>
+      <ProductImage props={{ alt, src }}>
         {bestseller ? <ProductFlag>bestseller</ProductFlag> : null}
-        <img src={Im1} alt="" className="w-100" />
+        <img src={src} alt={alt} className="w-100 h-100" />
         <BlackButton full>ADD TO CART</BlackButton>
-      </ProductDetails>
+      </ProductImage>
 
       <ProductCategory>{category}</ProductCategory>
       <ProductName>{name}</ProductName>
